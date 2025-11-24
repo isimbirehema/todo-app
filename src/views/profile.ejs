@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile - My To Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body class="profile-page">
+
+  <!-- Shared header -->
+  <%- include('partials/header') %>
+
+  <div class="profile-container">
+    <h1>Your Profile</h1>
+
+    <% if (user.firstName) { %>
+      <p class="greeting">Welcome back, <strong><%= user.firstName %></strong>.</p>
+    <% } %>
+
+    <div class="profile-info">
+    <% if (user.firstName || user.lastName) { %>
+   <p><strong>Name:</strong> <%= user.firstName %> <%= user.lastName %></p>
+   <% } else if (user.username) { %>
+  <p><strong>Name:</strong> <%= user.username %></p>
+   <% } else { %>
+  <p><strong>Name:</strong> Not provided</p>
+  <% } %>
+
+      <% if (user.email) { %>
+  <p><strong>Email:</strong> <%= user.email %></p>
+   <% } else if (user.username) { %>
+  <p><strong>Email:</strong> <%= user.username %>@example.com</p>
+   <% } else { %>
+  <p><strong>Email:</strong> Not provided</p>
+   <% } %>
+
+
+      <% if (user.username) { %>
+        <p><strong>Username:</strong> <%= user.username %></p>
+      <% } else { %>
+        <p><strong>Username:</strong> Not provided</p>
+      <% } %>
+    </div>
+
+    <h2>Update Your Info</h2>
+    <form action="/auth/profile/update" method="POST">
+      <label for="name">New Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter new name" required />
+
+      <label for="email">New Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter new email" required />
+
+      <label for="password">New Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter new password" required />
+
+      <button type="submit">Update Profile</button>
+    </form>
+
+  
+    <form action="/auth/profile/delete" method="POST" 
+          onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.')">
+      <button type="submit" class="delete-button">Delete My Account</button>
+    </form>
+  </div>
+
+</body>
+</html>

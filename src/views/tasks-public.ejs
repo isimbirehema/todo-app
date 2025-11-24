@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Public Tasks</title>
+  <link rel="stylesheet" href="/css/auth.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Public Task Directory</h1>
+
+    <% if (tasks.length === 0) { %>
+      <p class="text-center text-muted">No tasks available.</p>
+    <% } else { %>
+      <div class="row">
+        <% tasks.forEach(task => { %>
+          <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><%= task.title %></h5>
+                <p class="card-text"><%= task.description || 'No description' %></p>
+                <p class="text-muted">Status: <%= task.completed ? 'Done' : 'Pending' %></p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+
+
+
+</body>
+</html>

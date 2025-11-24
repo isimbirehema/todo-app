@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home - My To Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/auth.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-image: url("/images/background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+    }
+
+    .home-content {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .button,
+    .get-started-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #da950d;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .button {
+      background-color: #2F4F4F;
+      margin-right: 10px;
+    }
+
+    .button:hover,
+    .get-started-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared header -->
+  <%- include('partials/header') %>
+
+  <div class="home-content">
+    <h1>Welcome To My To Do List</h1>
+
+    <p>
+      Plans didn’t go as expected today? No worries. With <strong>My To Do List</strong>, organizing your day takes just a moment.  
+      Stay focused, stay on track, and never miss a beat.  
+      Your goals deserve structure. Let’s build it together.
+    </p>
+
+    <% if (user) { %>
+      <a href="/tasks" class="get-started-btn">Go to Tasks</a>
+    <% } else { %>
+      <a href="/auth/register" class="get-started-btn">Get Started</a>
+    <% } %>
+  </div>
+
+</body>
+</html>

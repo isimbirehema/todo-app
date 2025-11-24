@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reset Password - My To Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body>
+
+  <!-- Shared header -->
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <div class="card">
+      <h1>Reset Password</h1>
+
+      <% if (error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+
+      <% if (success) { %>
+        <p class="success"><%= success %></p>
+      <% } %>
+
+      <form action="/auth/reset" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required />
+
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required />
+
+        <button type="submit">Reset Password</button>
+      </form>
+
+      <div class="actions">
+        <a href="/auth/login">Back to Login</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

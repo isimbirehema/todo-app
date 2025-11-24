@@ -1,0 +1,350 @@
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('/images/background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 70px;
+  position: relative;
+}
+
+/* Profile page background  */
+body.profile-page {
+  background-image: url('/images/background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+/*background for login, register, profile */
+body.login-page,
+body.register-page,
+body.profile-page,
+body.public-task-page {
+  background-image: url('/images/RL.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-container {
+  max-width: 600px; 
+  width: 90%;
+  margin: 0 auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: -1;
+}
+
+/* Top navigation bar */
+.top-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 16px 32px;
+  background-color: #824f22;
+  z-index: 1000;
+}
+
+/* Navigation link style */
+.nav-link-custom {
+  color: #fff8dc;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  background-color: #ffcc70;
+  color: #74a8a8;
+}
+
+/* Header title */
+.header-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff8dc;
+  background-color: #82b3b3;
+  display: block;
+  width: fit-content;
+  margin: 40px auto 12px;
+  padding: 10px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Homepage content */
+.home-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.home-content h1 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 3.2rem;
+  color: #131212;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(196, 103, 103, 0.2);
+}
+
+.home-content p {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem; 
+  font-weight: 700;
+  line-height: 2;
+  color: #2e0303; 
+  margin-bottom: 40px;
+}
+
+/* Get Started button */
+.get-started-btn {
+  display: inline-block;
+  background-color: #b61b0a;
+  color: #fff8dc;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.get-started-btn:hover {
+  background-color: #7b581c;
+  transform: scale(1.03);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+}
+
+/* Card layout */
+.card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(151, 14, 14, 0.15);
+}
+
+/* Heading */
+h1 {
+  margin: 0 0 20px;
+  text-align: center;
+  color: #7eadad;
+}
+
+/* Error message */
+.error {
+  color: #d10000;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2F4F4F;
+  box-shadow: 0 0 0 3px rgba(47, 79, 79, 0.12);
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #2F4F4F;
+  color: #fff8dc;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+}
+
+button:hover {
+  background-color: #3b5f5f;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Link row */
+.actions {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.actions a {
+  color: #ffbb00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+  .card {
+    padding: 24px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .header-title {
+    font-size: 1.6rem;
+    padding: 8px 20px;
+  }
+  .home-content h1 {
+    font-size: 2.4rem;
+  }
+  .home-content p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+  .container {
+    padding: 12px;
+    max-width: 100%;
+  }
+  .card {
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  input, button {
+    font-size: 0.95rem;
+  }
+  .header-title {
+    font-size: 1.4rem;
+    padding: 6px 16px;
+  }
+  .home-content h1 {
+    font-size: 2rem;
+  }
+  .home-content p {
+    font-size: 1.2rem;
+  }
+}
+
+body.task-page {
+  background-image: none; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+#task-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.task-container {
+  max-width: 640px;
+  width: 90%;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.task-container h1 {
+  font-size: 2.4rem;
+  color: #2F4F4F;
+  margin-bottom: 24px;
+}
+
+.task-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-container input[type="text"] {
+  padding: 18px;
+  font-size: 1.2rem;
+  border: 2

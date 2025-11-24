@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tasks - My To Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body class="task-page">
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline id="task-bg-video">
+    <source src="/videos/backgroundvid1.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Shared header -->
+  <%- include('partials/header') %>
+
+  <div class="task-container">
+    <h1>My Tasks</h1>
+
+    <!-- Create Task Form -->
+    <form action="/tasks/create" method="POST">
+      <input type="text" name="title" placeholder="Enter a new task..." required />
+      <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Task List -->
+    <div class="task-list">
+      <% tasks.forEach(task => { %>
+        <div class="task-item <%= task.completed ? 'completed' : '' %>">
+          <span><%= task.title %></span>
+          <div class="task-buttons">
+            <form action="/tasks/<%= task._id %>/toggle" method="POST" style="display:inline;">
+              <button type="submit"><%= task.completed ? 'Undo' : 'Complete' %></button>
+            </form>
+            <form action="/tasks/<%= task._id %>/delete" method="POST" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+</body>
+</html>
+
