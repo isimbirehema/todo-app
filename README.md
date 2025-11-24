@@ -93,6 +93,7 @@ This project uses Node.js with npm for package management.
 - W3schools
 - Youtube video
 - shecodes
+- google images
 
 word docx: 
 https://docs.google.com/document/d/1LKMdrYp8PVVv1T1T9FrKz6BOgehN_0Oxkbw3Lrb_1XM/edit?usp=sharing
