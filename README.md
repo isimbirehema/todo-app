@@ -1,6 +1,5 @@
 # My To Do List App
 
-# Overview
 This is My full App "To Do List" app made by Rehema Isimbi. It lets users sign up, log in, manage their profile, and create, edit, delete, and view tasks. The app also has a splash home page and a public tasks page that anyone can see.
 
 # Technologies Used
@@ -36,54 +35,66 @@ This is My full App "To Do List" app made by Rehema Isimbi. It lets users sign u
   - .env
   - .gitignore
   - package.json
+  - docs
+    
   - public/
-    - css/
-      - auth.css
-  - src/
-    - models/
-      - User.js
-      - Task.js
-    - routes/
-      - auth.js
-      - tasks.js
-    - views/
-      - index.ejs
-      - login.ejs
-      - register.ejs
-      - profile.ejs
-      - tasks.ejs
-      - tasks-public.ejs
-      - partials/
-        - header.ejs
-        - footer.ejs
-    - middleware/
-      - requireLogin.js
+       css/
+         auth.css
+- src/
+   models/
+      User.js
+       Task.js
+         routes/
+           auth.js
+             tasks.js
+- views/
+    index.ejs
+      login.ejs
+         register.ejs
+           profile.ejs
+             tasks.ejs
+               tasks-public.ejs
+  partials/
+        header.ejs
+           footer.ejs
+- middleware/
+        requireLogin.js
 
 
 
 
-## Setup Instructions
+# Setup Instructions
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
 3. Create a `.env` file in the root folder with:
 
 
-4. Run the app with `node app.js` or `npm start`.
+4. Run the app with node app.js or npm start.
 5. Open `http://localhost:3000` in browser.
 
 # Styling
 The app uses custom CSS in `public/css/auth.css`. 
 
 # Security
-Sensitive data is stored in `.env` and loaded with `dotenv`. The `.env` file is ignored in GitHub using `.gitignore`.
+Sensitive data is stored in `.env` and loaded with dotenv. The .env file is ignored in GitHub using .gitignore.
 
 # Author
-Rehema Isimbi — built the whole app (frontend + backend).
+Rehema Isimbi built the whole app
 
+# Note: 
+Dependencies and Node Modules
+This project uses Node.js with npm for package management.
+- All dependencies are listed in "package.json" and locked in package-lock.json.
+- The "node_modules" folder is not included in GitHub because it is ignored via ".gitignore".  
+- To install the required packages, simply run: "npm start" in terminal
+  
 # Reference: 
 
 - W3schools
 - Youtube video
 - shecodes
+
+word docx: 
+https://docs.google.com/document/d/1LKMdrYp8PVVv1T1T9FrKz6BOgehN_0Oxkbw3Lrb_1XM/edit?usp=sharing
 
 
