@@ -10,28 +10,34 @@ passport.use(new GoogleStrategy({
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: process.env.GOOGLE_CALLBACK_URL
 }, (accessToken, refreshToken, profile, done) => {
-  return done(null, profile);
+  return done(null, {
+    id: profile.id,
+    username: profile.displayName || profile.emails?.[0]?.value || 'GoogleUser'
+  });
 }));
 
 
-// GitHub OAuth Strategy (with scope fix)
+// GitHub OAuth Strategy
 
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
   callbackURL: process.env.GITHUB_CALLBACK_URL,
-  scope: ['user:email'] // ensures GitHub returns email
+  scope: ['user:email']
 }, (accessToken, refreshToken, profile, done) => {
-  return done(null, profile);
+  return done(null, {
+    id: profile.id,
+    username: profile.username || profile.displayName || 'GitHubUser'
+  });
 }));
 
 
-// Serialize / Deserialize
+// Session Handling
 
 passport.serializeUser((user, done) => {
-  done(null, user);
+  done(null, user.id);
 });
 
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
+passport.deserializeUser((id, done) => {
+  done(null, { id });
 });
