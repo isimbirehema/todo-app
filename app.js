@@ -9,7 +9,7 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT; 
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI)
