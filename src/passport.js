@@ -2,7 +2,9 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
 
+
 // Google OAuth Strategy
+
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -11,7 +13,9 @@ passport.use(new GoogleStrategy({
   return done(null, profile);
 }));
 
-// GitHub OAuth Strategy with scope fix
+
+// GitHub OAuth Strategy (with scope fix)
+
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -21,7 +25,9 @@ passport.use(new GitHubStrategy({
   return done(null, profile);
 }));
 
+
 // Serialize / Deserialize
+
 passport.serializeUser((user, done) => {
   done(null, user);
 });
